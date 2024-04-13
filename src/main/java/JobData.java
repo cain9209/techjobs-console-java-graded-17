@@ -19,7 +19,6 @@ public class JobData {
     private static boolean isDataLoaded = false;
 
     private static ArrayList<HashMap<String, String>> allJobs;
-
     /**
      * Fetch list of all values from loaded data,
      * without duplicates, for a given column.
@@ -27,8 +26,9 @@ public class JobData {
      * @param field The column to retrieve values from
      * @return List of all of the values of the given field
      */
-    public static ArrayList<String> findAll(String field) {
 
+
+    public static ArrayList<String> findAll(String field) {
         // load data, if not already loaded
         loadData();
 

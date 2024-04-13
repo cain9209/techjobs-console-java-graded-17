@@ -19,7 +19,7 @@ public class TechJobs {
         columnChoices.put("location", "Location");
         columnChoices.put("position type", "Position Type");
         columnChoices.put("all", "All");
-
+        JobData jobdata = new JobData();
         // Top-level menu options
         HashMap<String, String> actionChoices = new HashMap<>();
         actionChoices.put("search", "Search");
@@ -119,7 +119,17 @@ public class TechJobs {
 
     // Print a list of jobs
     private static void printJobs(ArrayList<HashMap<String, String>> someJobs) {
+        for(HashMap<String,String> printJob: someJobs) {
+            System.out.println("*****");  // Print starting delimiter for a job entry
+            for(Map.Entry<String,String> jobs : printJob.entrySet()) {
+                System.out.println(jobs.getKey() + ":" + jobs.getValue());
+            }
+            System.out.println("*****");  // Print starting delimiter for a job entry
+            System.out.println();
+        }
 
-        System.out.println("printJobs is not implemented yet");
+
+
+//        System.out.println("printJobs is not implemented yet");
     }
 }
