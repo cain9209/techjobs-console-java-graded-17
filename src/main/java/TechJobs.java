@@ -117,10 +117,10 @@ public class TechJobs {
 
     // Print a list of jobs
     private static void printJobs(ArrayList<HashMap<String, String>> someJobs) {
-        if (someJobs.isEmpty()) {
-            System.out.print("No Results");
-            return;
+       if(someJobs == null) {
+           System.out.print("No Results");
         } else {
+            boolean foundResults = false;
             for (HashMap<String, String> printJob : someJobs) {
                 System.out.println();
                 System.out.println("*****");  // Print starting delimiter for a job entry
@@ -128,8 +128,13 @@ public class TechJobs {
                     System.out.println(job.getKey() + ": " + job.getValue());
                 }
                 System.out.println("*****");  // Print ending delimiter for a job entry
+                foundResults = true;
+            }
+            if(!foundResults){
+                System.out.print("No Results");
             }
         }
+
     }
 
 }
