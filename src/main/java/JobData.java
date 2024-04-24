@@ -87,44 +87,26 @@ public class JobData {
      * @return      List of all jobs with at least one field containing the value
      */
     public static ArrayList<HashMap<String, String>> findByValue(String value) {
-
         // load data, if not already loaded
         loadData();
 
-//        ArrayList<HashMap<String,String>> matchingJobs = new ArrayList<>();
-//        HashSet<String> seenJobs = new HashSet<>();
-//        String lowerCaseValue = value.toLowerCase();
-//
-//        for(Map<String, String> job: allJobs) {
-//            boolean isjobAdded = false;
-//
-//            for (String key : job.keySet()) {
-//                String fieldValue = job.get(key).toLowerCase();
-//                if (fieldValue.contains(lowerCaseValue)) {
-//
-//                    String jobAsString = job.toString(); // Convert the job to a string representation
-//                    if (!seenJobs.contains(jobAsString)) { // Check if this job has already been added based on its string representation
-//                        seenJobs.add(jobAsString); // Mark this job as seen
-//                        matchingJobs.add(new HashMap<>(job));
-//                        isjobAdded = true;
-//                        break;
-//
-//                    }
-//                }
-//            }
-//            if (isjobAdded) {
-//                break;
-//            }
-//        }
-//            if(matchingJobs.isEmpty()) {
-//                return null;
-//            } else {
-//                return matchingJobs;
-//            }
+        ArrayList<HashMap<String,String>> filteredJobs = new ArrayList<>();
+        HashSet<HashMap<String,String>> seenJobs = new HashSet<>();
 
+        for(HashMap<String,String> job: allJobs){
+            for(String key : job.keySet()) {
+                String jobValue = job.get(key).toLowerCase();
+                if(jobValue != null && jobValue.toLowerCase().contains(value.toLowerCase())) {
+                    if(!seenJobs.contains(job)) {
+                        filteredJobs.add(job);
+                        seenJobs.add(job);
+                    }
+                    break;
+                }
+            }
+        }
         // TODO - implement this method
-
-        return null;
+        return filteredJobs;
     }
 
     /**

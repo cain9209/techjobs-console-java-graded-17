@@ -133,14 +133,23 @@ public class TechJobs {
             if(!foundResults){
                 System.out.print("No Results");
             }
+
         }
 
+    }
+    // Need to figure out how to import methdod to pring the jobs after search. //
+    private static boolean containsSearchTerm(HashMap<String,String> job, String searchTerm) {
+        for (String value : job.values()) {
+            if (value.toLowerCase().contains(searchTerm.toLowerCase())) {
+                return true;
+            }
+        }
+        return false;
     }
 
 }
 
 
 
-        //        System.out.println("printJobs is not implemented yet"); //
 
 
