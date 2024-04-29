@@ -30,6 +30,7 @@ public class TechJobsTest {
         TechJobs.in = new Scanner(input);
         TechJobs.main(null);
         return baos.toString();
+
     }
 
     private static String getFileContents(String fileName) throws IOException {
