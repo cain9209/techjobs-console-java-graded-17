@@ -7,12 +7,13 @@ import java.util.Scanner;
  * Created by LaunchCode
  */
 public class TechJobs {
-
+// take in user input and make it available for the whole class//
     static Scanner in = new Scanner(System.in);
 
     public static void main(String[] args) {
 
         // Initialize our field map with key/name pairs
+        // We want to store the column choises in a Key:Value pair//
         HashMap<String, String> columnChoices = new HashMap<>();
         columnChoices.put("core competency", "Skill");
         columnChoices.put("employer", "Employer");
@@ -24,7 +25,7 @@ public class TechJobs {
         HashMap<String, String> actionChoices = new HashMap<>();
         actionChoices.put("search", "Search");
         actionChoices.put("list", "List");
-
+        // Bring in the users selection and then compare with the CSV file //
         System.out.println("Welcome to LaunchCode's TechJobs App!");
         // Allow the user to search until they manually quit
         while (true) {
