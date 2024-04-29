@@ -16,7 +16,6 @@ import org.junit.Test;
  */
 public class TechJobsTest {
 
-
     private static ByteArrayOutputStream baos;
 
     // set up an alternative output stream to capture output
