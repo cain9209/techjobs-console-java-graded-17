@@ -37,7 +37,6 @@ public class TechJobsTest {
         Path path = FileSystems.getDefault().getPath(fileName);
         return Files.readString(path);
     }
-
     @Test
     public void testPrintJobs() throws IOException {
         String input = "0\n2\nBuzzbold\nx";
